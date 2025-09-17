@@ -1,3 +1,5 @@
+import Input from "../components/Input";
+
 // Uncomment everything when API is in place
 
 import { useState } from "react";
@@ -61,21 +63,24 @@ function Login() {
     <div className="loginContainer">
       {/* <form className="loginForm" onSubmit={handleSubmit}> */}
       <form className="loginForm" onSubmit={handleLogin}>
-        <input
+        <Input
           type="text"
           name="username"
           placeholder="username"
           value={credentials.username}
           onChange={handleInput}
         />
-        <input
+        <Input
           type="password"
           name="password"
           placeholder="password"
           value={credentials.password}
           onChange={handleInput}
         />
-        <button type="submit">Login</button>
+
+        <button className="submit" type="submit">
+          Login
+        </button>
       </form>
       {/* {error && <p className="error">{error}</p>} */}
     </div>
