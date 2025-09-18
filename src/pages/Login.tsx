@@ -87,7 +87,7 @@ function Login() {
           Not a member yet? Join us
         </Link>
       </div>
-      <Link className="forgotPassword" to="/signup">
+      <Link className="forgotPassword" to="/reset-password">
         Forgot your password?
       </Link>
       {/* {error && <p className="error">{error}</p>} */}

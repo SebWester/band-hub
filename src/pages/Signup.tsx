@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Input from "../components/Input";
 
@@ -8,6 +10,7 @@ function Signup() {
     password: "",
     repeatPassword: "",
   });
+  const navigate = useNavigate();
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -17,6 +20,8 @@ function Signup() {
   const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(user);
+    // API + await ok response before navigating to login
+    navigate("/login");
   };
 
   return (
@@ -52,9 +57,12 @@ function Signup() {
         />
 
         <button className="submit" type="submit">
-          Login
+          Sign up
         </button>
       </form>
+      <Link className="goBack" to="/">
+        Back to start
+      </Link>
     </div>
   );
 }
