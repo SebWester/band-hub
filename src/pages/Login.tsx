@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import Input from "../components/Input";
-
-// Uncomment everything when API is in place
-
 import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import "../styles/login.css";
+
+// Uncomment everything when API is in place
 
 function Login() {
   const [credentials, setCredentials] = useState({
