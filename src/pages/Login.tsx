@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Input from "../components/Input";
 import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/login.css";
 
 // Uncomment everything when API is in place
@@ -12,7 +12,7 @@ function Login() {
     password: "",
   });
   // const [error, setError] = useState("");
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -52,6 +52,7 @@ function Login() {
     e.preventDefault();
     console.log(credentials);
     console.log("Logging in");
+    navigate("/dashboard");
   };
   /*
     ----------------------------
