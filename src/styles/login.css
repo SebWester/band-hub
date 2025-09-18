@@ -36,3 +36,30 @@
   transform: scale(1.1);
   cursor: pointer;
 }
+
+.noAccountContainer {
+  margin-top: 20px;
+}
+
+.signUp {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.signUp:hover {
+  transform: scale(1.2);
+}
+
+.forgotPassword {
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.forgotPassword:hover {
+  transform: scale(1.1);
+}

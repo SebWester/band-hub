@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Input from "../components/Input";
 
 // Uncomment everything when API is in place
@@ -82,6 +83,14 @@ function Login() {
           Login
         </button>
       </form>
+      <div className="noAccountContainer">
+        <Link className="signUp" to="/signup">
+          Not a member yet? Join us
+        </Link>
+      </div>
+      <Link className="forgotPassword" to="/signup">
+        Forgot your password?
+      </Link>
       {/* {error && <p className="error">{error}</p>} */}
     </div>
   );
