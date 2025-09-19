@@ -2,14 +2,26 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext";
+import { usePage } from "../../contexts/pageContext";
 import NavBar from "./NavBar";
 import "./styles/dashStyle.css";
 
 // Add page provider
 
+// Remove later
+const fakePage = (text: string) => {
+  return (
+    <div className="fakeContainer">
+      <h1>Dashboard</h1>
+      {text}
+    </div>
+  );
+};
+
 function Dashboard() {
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
+  const { page } = usePage();
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -25,9 +37,8 @@ function Dashboard() {
   return (
     <div className="dashContainer">
       <NavBar />
-      <h1>Dashboard</h1>
 
-      <p>✅ Du är inloggad</p>
+      {fakePage(page)}
     </div>
   );
 }
