@@ -28,15 +28,21 @@ function NavBar() {
         {navBarIcon}
       </button>
       <div className={showNavLinks}>
-        <button className="navButton">
-          <Link to="/dashboard/start">Start</Link>
-        </button>
-        <button className="navButton">
-          <Link to="/dashboard/profile">Profile</Link>
-        </button>
-        <button className="navButton">
-          <Link to="/dashboard/browse">Browse</Link>
-        </button>
+        {/* <button className="navButton"> */}
+        <Link className="navLink navButton" to="/dashboard/start">
+          Start
+        </Link>
+        {/* </button> */}
+        {/* <button className="navButton"> */}
+        <Link className="navLink navButton" to="/dashboard/profile">
+          Profile
+        </Link>
+        {/* </button> */}
+        {/* <button className="navButton"> */}
+        <Link className="navLink navButton" to="/dashboard/browse">
+          Browse
+        </Link>
+        {/* </button> */}
 
         <button className="logoutButton" onClick={logout}>
           Log out

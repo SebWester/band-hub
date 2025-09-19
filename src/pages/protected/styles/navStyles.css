@@ -48,6 +48,13 @@
   background-color: rgba(245, 245, 245, 0.5);
 }
 
+.navLink {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 500;
+  padding-left: 0;
+}
+
 .collapseButton {
   width: "fit-content";
   position: absolute;
