@@ -1,0 +1,35 @@
+.navButton {
+  padding: 10px;
+  font-size: 20px;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.navButton:hover {
+  cursor: pointer;
+  background-color: rgba(245, 245, 245, 0.5);
+}
+
+.logoutButton {
+  align-self: center;
+  position: absolute;
+  bottom: 20px;
+
+  color: black;
+  background-color: white;
+  width: 160px;
+  border: 1px solid whitesmoke;
+  border-radius: 12px;
+  font-size: 20px;
+  padding: 5px 20px 5px 20px;
+  text-decoration: none;
+}
+
+.logoutButton:hover {
+  color: black;
+  /* background-color: rgba(255, 255, 255, 0.6); */
+  transform: scale(1.1);
+  cursor: pointer;
+}
