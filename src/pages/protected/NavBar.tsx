@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../../contexts/authContext";
 import { usePage } from "../../contexts/pageContext";
 import "./styles/navStyles.css";
@@ -8,28 +8,48 @@ import "./styles/navStyles.css";
 function NavBar() {
   const { logout } = useAuth();
   const { page, setPage } = usePage();
+  const [showNavBar, setShowNavbar] = useState(true);
 
+  const navBarIcon = showNavBar ? (
+    <i className="fa-solid fa-chevron-left"></i>
+  ) : (
+    <i className="fa-solid fa-chevron-right"></i>
+  );
+  const navBarClass = showNavBar ? "navBarContainer" : "hideNavBar";
+  const showNavLinks = showNavBar ? "displayLinks" : "hideLinks";
+
+  // Remove later
   useEffect(() => {
     console.log(page);
   }, [page]);
 
+  const toggleDisplayNavBar = () => {
+    setShowNavbar((prev) => !prev);
+  };
+
   return (
-    <div className="navBarContainer">
-      <button className="navButton" onClick={() => setPage("start")}>
-        Button 1
+    <div className={navBarClass}>
+      <button className="collapseButton" onClick={toggleDisplayNavBar}>
+        {navBarIcon}
       </button>
-      <button className="navButton" onClick={() => setPage("Button 2")}>
-        Button 2
-      </button>
-      <button className="navButton" onClick={() => setPage("Button 3")}>
-        Button 3
-      </button>
-      <button className="navButton" onClick={() => setPage("Button 4")}>
-        Button 4
-      </button>
-      <button className="logoutButton" onClick={logout}>
-        Log out
-      </button>
+      <div className={showNavLinks}>
+        <button className="navButton" onClick={() => setPage("start")}>
+          Start
+        </button>
+        <button className="navButton" onClick={() => setPage("profile")}>
+          Profile
+        </button>
+        <button className="navButton" onClick={() => setPage("browse")}>
+          Browse
+        </button>
+        <button className="navButton" onClick={() => setPage("Button 4")}>
+          Button 4
+        </button>
+
+        <button className="logoutButton" onClick={logout}>
+          Log out
+        </button>
+      </div>
     </div>
   );
 }

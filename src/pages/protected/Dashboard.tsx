@@ -4,18 +4,33 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext";
 import { usePage } from "../../contexts/pageContext";
 import NavBar from "./NavBar";
+import Profile from "./profile/Profile";
+import Browse from "./browse/Browse";
 import "./styles/dashStyle.css";
 
 // Add page provider
 
-// Remove later
+// Change to component later
 const fakePage = (text: string) => {
   return (
-    <div className="fakeContainer">
+    <div className="mainContainer">
       <h1>Dashboard</h1>
       {text}
     </div>
   );
+};
+
+const renderPage = (page: string) => {
+  switch (page) {
+    case "start":
+      return fakePage(page);
+    case "profile":
+      return <Profile />;
+    case "browse":
+      return <Browse />;
+    case "Button 4":
+      return fakePage(page);
+  }
 };
 
 function Dashboard() {
@@ -38,7 +53,7 @@ function Dashboard() {
     <div className="dashContainer">
       <NavBar />
 
-      {fakePage(page)}
+      {renderPage(page)}
     </div>
   );
 }
