@@ -18,7 +18,7 @@
 .navBarContainer,
 .hideNavBar {
   transition: width 0.3s ease;
-  overflow: hidden; /* hindrar att innehåll sticker ut */
+  overflow: hidden;
 }
 
 .displayLinks {
@@ -46,6 +46,13 @@
 .navButton:hover {
   cursor: pointer;
   background-color: rgba(245, 245, 245, 0.5);
+}
+
+.navLink {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 500;
+  padding-left: 0;
 }
 
 .collapseButton {

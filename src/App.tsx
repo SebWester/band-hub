@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { AuthProvider } from "./contexts/authContext";
 import { PageProvider } from "./contexts/pageContext";
 import Start from "./pages/Start";
@@ -20,9 +25,13 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/reset-password" element={<ResetPassword />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/browse" element={<Browse />} />
+            <Route path="/dashboard/*" element={<Dashboard />}>
+              <Route path="profile" element={<Profile />} />
+              <Route path="browse" element={<Browse />} />
+              {/* Add more here */}
+            </Route>
+            ;{/* catch-all */}
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Router>
       </PageProvider>
