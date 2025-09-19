@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext";
 
 function Dashboard() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,6 +23,7 @@ function Dashboard() {
       <h1>Dashboard</h1>
 
       <p>✅ Du är inloggad</p>
+      <button onClick={logout}>Log out</button>
     </div>
   );
 }
