@@ -2,6 +2,10 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext";
+import NavBar from "./NavBar";
+import "./styles/dashStyle.css";
+
+// Add page provider
 
 function Dashboard() {
   const { isAuthenticated, logout } = useAuth();
@@ -19,11 +23,11 @@ function Dashboard() {
   }
 
   return (
-    <div>
+    <div className="dashContainer">
+      <NavBar />
       <h1>Dashboard</h1>
 
       <p>✅ Du är inloggad</p>
-      <button onClick={logout}>Log out</button>
     </div>
   );
 }
