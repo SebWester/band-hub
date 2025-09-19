@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Input from "../components/Input";
 
 function ResetPassword() {
@@ -34,6 +35,9 @@ function ResetPassword() {
           Reset password
         </button>
       </form>
+      <Link className="goBack" to="/login">
+        Back to login
+      </Link>
     </div>
   );
 }
