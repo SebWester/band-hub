@@ -5,6 +5,8 @@ import Start from "./pages/Start";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/protected/Dashboard";
+import Profile from "./pages/protected/profile/Profile";
+import Browse from "./pages/protected/browse/Browse";
 import ResetPassword from "./pages/ResetPass";
 import "./App.css";
 
@@ -18,9 +20,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/reset-password" element={<ResetPassword />} />
-
-            {/* Add protected routes below */}
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/browse" element={<Browse />} />
           </Routes>
         </Router>
       </PageProvider>

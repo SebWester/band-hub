@@ -1,3 +1,37 @@
+.navBarContainer {
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  flex-direction: column;
+  justify-self: flex-start;
+  width: 250px;
+  border-right: 1px solid rgba(245, 245, 245, 0.1);
+  position: relative;
+}
+
+.hideNavBar {
+  display: flex;
+  width: 20px;
+  position: relative;
+}
+
+.navBarContainer,
+.hideNavBar {
+  transition: width 0.3s ease;
+  overflow: hidden; /* hindrar att innehåll sticker ut */
+}
+
+.displayLinks {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.hideLinks {
+  display: none;
+  pointer-events: none;
+}
+
 .navButton {
   padding: 10px;
   margin-top: 10px; /* KEEP? */
@@ -14,8 +48,26 @@
   background-color: rgba(245, 245, 245, 0.5);
 }
 
+.collapseButton {
+  width: "fit-content";
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+  font-size: 20px;
+}
+
+.fa-chevron-left:hover,
+.fa-chevron-right:hover {
+  cursor: pointer;
+}
+
 .logoutButton {
   align-self: center;
+
   position: absolute;
   bottom: 20px;
 
