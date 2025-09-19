@@ -28,7 +28,7 @@ const renderPage = (page: string) => {
       return <Profile />;
     case "browse":
       return <Browse />;
-    case "Button 4":
+    case "collaborate":
       return fakePage(page);
   }
 };

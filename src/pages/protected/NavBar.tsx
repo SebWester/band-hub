@@ -42,8 +42,8 @@ function NavBar() {
         <button className="navButton" onClick={() => setPage("browse")}>
           Browse
         </button>
-        <button className="navButton" onClick={() => setPage("Button 4")}>
-          Button 4
+        <button className="navButton" onClick={() => setPage("collaborate")}>
+          Collaborate
         </button>
 
         <button className="logoutButton" onClick={logout}>
