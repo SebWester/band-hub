@@ -8,7 +8,7 @@ import "./styles/dashStyle.css";
 // Add page provider
 
 function Dashboard() {
-  const { isAuthenticated, logout } = useAuth();
+  const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
