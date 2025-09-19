@@ -14,3 +14,10 @@
   width: 300px;
   border-right: 1px solid rgba(245, 245, 245, 0.1);
 }
+
+.fakeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
