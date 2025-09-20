@@ -10,6 +10,7 @@ import Start from "./pages/Start";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/protected/Dashboard";
+import Index from "./pages/protected/index/Index";
 import Profile from "./pages/protected/profile/Profile";
 import Browse from "./pages/protected/browse/Browse";
 import ResetPassword from "./pages/ResetPass";
@@ -26,6 +27,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/dashboard/*" element={<Dashboard />}>
+              <Route index element={<Index />} /> {/* Dash entry point */}
               <Route path="profile" element={<Profile />} />
               <Route path="browse" element={<Browse />} />
               {/* Add more here */}
