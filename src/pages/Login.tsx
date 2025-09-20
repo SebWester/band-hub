@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../contexts/authContext";
 import Input from "../components/Input";
+import { sendCredentials } from "../services/authService";
 import "../styles/login.css";
 
 // Uncomment everything when API is in place
@@ -49,12 +50,29 @@ function Login() {
     Remove when API is in place
     ----------------------------
   */
-  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+
+  // Fix later
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(credentials);
     console.log("Logging in");
-    login();
-    navigate("/dashboard");
+
+    try {
+      const data = await sendCredentials(
+        credentials.username,
+        credentials.password
+      );
+
+      console.log(data);
+
+      if (data) {
+        login();
+        navigate("/dashboard");
+      }
+    } catch (err) {
+      console.error(err);
+      alert(err || "Login failed");
+    }
   };
   /*
     ----------------------------
