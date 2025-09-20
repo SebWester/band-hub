@@ -13,6 +13,7 @@ import Dashboard from "./pages/protected/Dashboard";
 import Index from "./pages/protected/index/Index";
 import Profile from "./pages/protected/profile/Profile";
 import Browse from "./pages/protected/browse/Browse";
+import Collab from "./pages/protected/collab/Collab";
 import ResetPassword from "./pages/ResetPass";
 import "./App.css";
 
@@ -27,9 +28,12 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/dashboard/*" element={<Dashboard />}>
-              <Route index element={<Index />} /> {/* Dash entry point */}
+              {/* Dash entry point */}
+              <Route index element={<Index />} />
+              <Route path="index" element={<Index />} />
               <Route path="profile" element={<Profile />} />
               <Route path="browse" element={<Browse />} />
+              <Route path="collab" element={<Collab />} />
               {/* Add more here */}
             </Route>
             ;{/* catch-all */}
