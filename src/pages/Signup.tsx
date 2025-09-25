@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Input from "../components/Input";
 import Role from "../components/Role";
+import { signUp } from "../services/signupService";
 
 function Signup() {
   const [user, setUser] = useState({
@@ -27,6 +28,8 @@ function Signup() {
     e.preventDefault();
     console.log(user);
     // API + await ok response before navigating to login
+    signUp(user);
+
     navigate("/login");
   };
 
